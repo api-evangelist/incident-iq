@@ -1,0 +1,57 @@
+generated: '2026-07-19'
+method: searched
+source: https://apihub.incidentiq.com/
+docs: https://www.incidentiq.com/platform/api
+summary:
+  types:
+  - http
+  - oauth1
+  api_key_in: []
+  notes: >-
+    Incident IQ API requests are authenticated with a bearer token in the
+    Authorization header plus platform-scoping headers. The Authorization token,
+    SiteId, and Client credentials are issued from the Incident IQ
+    Administration > Developer Tools console. Some partner integrations (e.g.
+    identity providers) instead use OAuth 1.0 consumer key/secret provisioning.
+schemes:
+- name: BearerToken
+  type: http
+  scheme: bearer
+  in: header
+  parameter: Authorization
+  description: >-
+    Bearer token issued from Administration > Developer Tools. Sent on every
+    request as `Authorization: Bearer <token>`.
+  sources:
+  - docs:https://apihub.incidentiq.com/
+- name: SiteId
+  type: apiKey
+  in: header
+  parameter: SiteId
+  description: >-
+    District/tenant site identifier (GUID) that scopes the request to a specific
+    Incident IQ instance. Required on every request.
+  sources:
+  - docs:https://apihub.incidentiq.com/
+- name: Client
+  type: apiKey
+  in: header
+  parameter: Client
+  description: >-
+    Client type header; API integrations set this to the literal value
+    `ApiClient`.
+  sources:
+  - docs:https://apihub.incidentiq.com/
+- name: OAuth1Consumer
+  type: oauth1
+  description: >-
+    OAuth 1.0 consumer key/secret provisioning used for select partner /
+    identity-provider integrations (consumer key + secret + access token URL
+    exchanged with Incident IQ). Not used for the general REST API.
+  sources:
+  - docs:https://help.rapididentity.com/docs/integrating-rapididentity-with-incident-iq
+required_headers:
+- SiteId
+- Authorization
+- Client
+- Content-Type
