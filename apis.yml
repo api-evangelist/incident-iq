@@ -1,8 +1,16 @@
 aid: incident-iq
 name: Incident IQ
-description: 'Incident IQ is a company surfaced as a portfolio company of iconiq-capital and added to
-  the API Evangelist network as a stub for enrichment. Sector: edtech. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Incident IQ is a K-12-purpose-built IT service management (ITSM) and asset
+  management platform used by school districts to run help desk ticketing,
+  device and technology asset tracking, facilities and HR service delivery,
+  and operational analytics. Its RESTful API (v1.0) lets districts and partners
+  build custom integrations across the district ecosystem — connecting billing
+  and ticketing, pushing tickets to third-party service providers, exporting
+  analytics to visualization tools, and syncing systems. Requests are
+  authenticated with SiteId, Authorization, and Client (ApiClient) headers
+  issued from Administration > Developer Tools, and events can be pushed to
+  external systems via rule-triggered webhooks.
 url: https://raw.githubusercontent.com/api-evangelist/incident-iq/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,18 +18,109 @@ x-backed-by:
 - iconiq-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Edtech
-apis: []
+- IT Service Management
+- Asset Management
+- Help Desk
+- Ticketing
+- K-12
+- Education
+- Webhooks
+- REST
+image: https://www.incidentiq.com/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Incident IQ API v1.0
+  description: >-
+    RESTful API for the Incident IQ K-12 ITSM and asset management platform.
+    Resources include tickets, assets, users, locations, views, and categories.
+    Requests require SiteId, Authorization (bearer token), and Client (ApiClient)
+    headers retrieved from Administration > Developer Tools. Rate limits apply.
+  humanURL: https://apihub.incidentiq.com/
+  baseURL: https://{site}.incidentiq.com/api/v1.0
+  properties:
+  - type: Overview
+    url: https://www.incidentiq.com/platform/api
+  - type: Documentation
+    url: https://apihub.incidentiq.com/
+  - type: APIReference
+    url: https://apihub.incidentiq.com/
+  - type: Authentication
+    url: authentication/incident-iq-authentication.yml
+  - type: Webhooks
+    url: asyncapi/incident-iq-webhooks.yml
+  - type: Conventions
+    url: conventions/incident-iq-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/incident-iq-lifecycle.yml
 common:
 - type: Website
   url: https://www.incidentiq.com/
+- type: DeveloperPortal
+  url: https://apihub.incidentiq.com/
+- type: Documentation
+  url: https://apihub.incidentiq.com/
+- type: APIReference
+  url: https://apihub.incidentiq.com/
+- type: GettingStarted
+  url: https://www.incidentiq.com/platform/api
+- type: Support
+  url: https://www.incidentiq.com/support
+- type: HelpCenter
+  url: https://community.incidentiq.com/
+- type: Blog
+  url: https://www.incidentiq.com/blog
+- type: Pricing
+  url: https://www.incidentiq.com/pricing
+- type: Login
+  url: https://login.incidentiq.com/
+- type: PrivacyPolicy
+  url: https://www.incidentiq.com/privacy-policy
+- type: TermsOfService
+  url: https://www.incidentiq.com/terms-of-use
+- type: TrustCenter
+  url: https://trust.incidentiq.com/
+- type: StatusPage
+  url: https://status.incidentiq.com/
+- type: GitHubOrganization
+  url: https://github.com/incidentiq
+- type: Authentication
+  url: authentication/incident-iq-authentication.yml
+- type: Lifecycle
+  url: lifecycle/incident-iq-lifecycle.yml
+- type: Conventions
+  url: conventions/incident-iq-conventions.yml
+- type: Webhooks
+  url: asyncapi/incident-iq-webhooks.yml
+- type: WellKnown
+  url: well-known/incident-iq-well-known.yml
+- type: DomainSecurity
+  url: security/incident-iq-domain-security.yml
+- type: LLMsTxt
+  url: llms/incident-iq-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

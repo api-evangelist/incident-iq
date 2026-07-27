@@ -1,0 +1,47 @@
+generated: '2026-07-19'
+method: searched
+source: https://community.incidentiq.com/integrations-73/web-hooks-574
+spec_type: Webhooks
+type: Webhooks
+description: >-
+  Incident IQ pushes events to external systems via webhooks configured inside
+  platform Rules. A webhook is a pre-configured action that fires when an
+  entity/record (ticket or asset) changes and a rule's conditions are met. There
+  is no published AsyncAPI document; this is the documented webhook surface.
+transport: http
+delivery:
+  method: POST
+  content_type: application/json
+  headers:
+  - name: Content-Type
+    value: application/json
+  body: >-
+    Configured per rule. If the Body field is left blank all content is
+    delivered; otherwise a JSON body composed from templated variables is sent.
+configuration:
+  where: Platform Rules (Administration)
+  triggered_by:
+  - ticket events
+  - asset events
+event_entities:
+- entity: Ticket
+  variables:
+  - '{Ticket.TicketId}'
+  - '{Ticket.SiteId}'
+  - '{Ticket.IssueTypeName}'
+  - '{Ticket.LocationName}'
+  - '{Ticket.IssueDescription}'
+  - '{Ticket.TicketNumber}'
+- entity: Asset
+  variables:
+  - '{Asset.AssetTag}'
+  - '{Asset.SerialNumber}'
+  - '{Asset.ExternalId}'
+limitations:
+  logging: >-
+    No dedicated webhook delivery logs; limited visibility appears only in a
+    rule's history (success confirmation and target URL, not full
+    request/response detail).
+notes: >-
+  Captured from Incident IQ community documentation. Rule-driven webhooks on
+  Ticket and Asset entities; JSON payloads assembled from templated variables.

@@ -1,0 +1,44 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of /.well-known/ on Incident IQ hosts
+hosts:
+- host: https://www.incidentiq.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://apihub.incidentiq.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://trust.incidentiq.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    valid: false
+    note: >-
+      Returns the Vanta trust-center SPA (content-type text/html), not a real
+      RFC 9116 security.txt. Treated as no document.
+  - path: /.well-known/openid-configuration
+    status: 200
+    valid: false
+    note: SPA catch-all HTML, not an OIDC discovery document.
+notes: >-
+  No valid /.well-known/ discovery documents are published. The trust subdomain
+  is a Vanta trust center that returns its SPA shell (HTTP 200, text/html) for
+  arbitrary /.well-known/ paths, so those 200s are not genuine documents.

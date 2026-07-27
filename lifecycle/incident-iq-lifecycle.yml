@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: https://apihub.incidentiq.com/
+versioning:
+  scheme: uri-path
+  current: v1.0
+  path_segment: /api/v1.0
+  docs: https://apihub.incidentiq.com/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No published deprecation or Sunset/Deprecation (RFC 8594) header policy located.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.incidentiq.com/
+status_provider: statuspage.io
+deprecated_operations: []
+notes: >-
+  Incident IQ exposes a single URI-path-versioned API (v1.0) at
+  /api/v1.0. A public Statuspage.io-backed status page is operated at
+  status.incidentiq.com. No public deprecation policy or SLA document was found.

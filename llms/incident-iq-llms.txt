@@ -1,0 +1,25 @@
+# Incident IQ
+
+> Incident IQ is a K-12-purpose-built IT service management (ITSM) and asset management platform for school districts — help desk ticketing, device/technology asset tracking, facilities and HR service delivery, and analytics. Its RESTful API v1.0 supports custom integrations across the district ecosystem, with rule-triggered webhooks for pushing events to external systems. Requests use SiteId, Authorization (bearer token), and Client (ApiClient) headers issued from Administration > Developer Tools.
+
+## APIs
+
+- [Incident IQ API v1.0](https://apihub.incidentiq.com/): RESTful API — tickets, assets, users, locations, views, categories. Base path /api/v1.0 on the district's own incidentiq.com tenant host.
+
+## Docs
+
+- [API overview](https://www.incidentiq.com/platform/api): What the API enables and common integration patterns.
+- [API hub / reference](https://apihub.incidentiq.com/): Stoplight-hosted API reference.
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/incident-iq/refs/heads/main/authentication/incident-iq-authentication.yml): Bearer token + SiteId + Client headers; OAuth 1.0 for select partner integrations.
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/incident-iq/refs/heads/main/conventions/incident-iq-conventions.yml): Versioning, rate limiting, headers, view-based querying.
+- [Webhooks](https://raw.githubusercontent.com/api-evangelist/incident-iq/refs/heads/main/asyncapi/incident-iq-webhooks.yml): Rule-triggered ticket/asset event webhooks.
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/incident-iq/refs/heads/main/lifecycle/incident-iq-lifecycle.yml): v1.0 URI-path versioning; status page.
+- [Community](https://community.incidentiq.com/): Developer and integration Q&A.
+
+## Operations
+
+- [Status page](https://status.incidentiq.com/): Platform status.
+- [Trust center](https://trust.incidentiq.com/): Security and compliance posture (Vanta).
+- [Support](https://www.incidentiq.com/support): Support portal.
+- [Pricing](https://www.incidentiq.com/pricing): Pricing information.
+- [Blog](https://www.incidentiq.com/blog): Company blog.

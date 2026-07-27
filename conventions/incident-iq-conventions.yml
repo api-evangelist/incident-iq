@@ -1,0 +1,53 @@
+generated: '2026-07-19'
+method: searched
+source: https://apihub.incidentiq.com/
+docs: https://community.incidentiq.com/other-54/api-documentation-and-rate-limits-3615
+authentication:
+  style: bearer-token + platform headers
+  headers:
+  - SiteId
+  - Authorization
+  - Client (ApiClient)
+  see: authentication/incident-iq-authentication.yml
+versioning:
+  style: uri-path
+  current: v1.0
+  base_path: /api/v1.0
+  see: lifecycle/incident-iq-lifecycle.yml
+idempotency:
+  supported: false
+  notes: No documented idempotency-key header or idempotent-write contract located.
+pagination:
+  style: view-based
+  notes: >-
+    List/query endpoints operate against saved Views (e.g.
+    /api/v1.0/views/{ViewId}); explicit cursor/offset pagination parameters are
+    not published in the public reference.
+rate_limiting:
+  enforced: true
+  documented_limit: null
+  notes: >-
+    Incident IQ enforces rate limits described by their engineering team as a
+    "fair balance limit"; specific request-per-window thresholds are not
+    published publicly.
+content_type: application/json
+request_headers:
+- Content-Type
+- Accept
+- Accept-Language
+- SiteId
+- ProductID
+- ApiFlags
+- Authorization
+- Client
+error_envelope:
+  format: unknown
+  notes: Error response envelope not published in the public reference.
+webhooks:
+  supported: true
+  see: asyncapi/incident-iq-webhooks.yml
+notes: >-
+  Cross-cutting conventions derived from Incident IQ's public API hub and
+  community documentation. Idempotency is NOT documented, so no Idempotency
+  pointer is emitted. Cross-links: authentication/, lifecycle/, asyncapi/
+  (webhooks).
